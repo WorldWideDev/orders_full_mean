@@ -1,0 +1,23 @@
+<div ng-controller='custController as CC'>
+	<h1>Add a Customer.</h1>
+	<input type='text' ng-model='CC.new_cust.name'>
+	<button ng-click='CC.create()'>add customer.</button><br>
+	<p>{{CC.err[0].err}}</p>
+	<input type='text' ng-model='filter' placeholder='search'>
+	<table class='table table-bordered'>
+		<thead>
+			<tr>
+				<th>Customer Name</th>
+				<th>Created Date</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat='c in CC.customers | filter: filter'>
+				<td>{{c.name}}</td>
+				<td>{{c.createdAt | date: "MMMM, d yyyy 'at' h:mma"}}</td>
+				<td><button ng-click=CC.delete(c) class='btn btn-danger'>DELETE</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

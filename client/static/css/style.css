@@ -1,0 +1,14 @@
+*{
+	font-family: monospace;
+}
+.conatiner{
+	width: 970px;
+	min-height: 600px;
+	margin: 0 auto;
+}
+table{
+	border: solid;
+}
+	thead{
+		background-color: #978D8D;
+	}
